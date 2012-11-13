@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/escudo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher" />
+
+
+    <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="Equipo"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/partidosJugados"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="PJ"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/partidosGanados"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="PG"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/partidosEmpatados"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="PE"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/partidosPerdidos"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="PP"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/golDiferencia"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="GD"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/puntos"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="PUNTOS"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</LinearLayout>
