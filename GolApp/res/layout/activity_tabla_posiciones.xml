@@ -15,14 +15,14 @@
         android:weightSum="100" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/escudo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Escudo"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/nombreEquipo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Equipo"
