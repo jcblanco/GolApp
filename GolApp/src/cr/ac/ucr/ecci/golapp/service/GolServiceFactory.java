@@ -1,13 +1,14 @@
 package cr.ac.ucr.ecci.golapp.service;
 
 public class GolServiceFactory {
-	static GolService service= new InMemoryGolService();
-	
-	public static GolService getService(int i){
+
+		public static GolService getService(int i){
 		GolService servicio= null;
 		if(i==1)
-			servicio = service;
-		
+			servicio = new InMemoryGolService();
+		if(i==2)
+			servicio= new GolWebService();
+			
 		return servicio;
 	}
 }

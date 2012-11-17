@@ -62,7 +62,7 @@ public class TablaPosiciones extends Activity {
 
 			@Override
 			protected List<PosicionEquipo> doInBackground(Void... params) {
-				GolService service= GolServiceFactory.getService(1);
+				GolService service= GolServiceFactory.getService(2);
 				List<PosicionEquipo> posiciones = null;
 				try {
 					posiciones=	service.getPosiciones();
