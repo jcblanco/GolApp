@@ -36,7 +36,8 @@ public class GolWebService extends GolService {
 	// Declaracion de variables para consuymir el web service
 	private SoapObject request = null;
 	private SoapSerializationEnvelope envelope = null;
-	private SoapPrimitive resultsRequestSOAP = null;
+	//private SoapPrimitive resultsRequestSOAP = null;
+	private Object resultsRequestSOAP = null;
 
 	// Declaracion de variables para serealziar y deserealizar
 	// objetos y cadenas JSON
@@ -71,7 +72,7 @@ public class GolWebService extends GolService {
 
 			//Se crea un objeto SoapPrimitive y se obtiene la respuesta
 			//de la peticion
-			resultsRequestSOAP = (SoapPrimitive)envelope.getResponse();
+			resultsRequestSOAP = envelope.getResponse();
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
