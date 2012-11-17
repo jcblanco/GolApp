@@ -16,37 +16,42 @@
 
         <TextView
             android:id="@+id/escudo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Escudo"
+            android:layout_weight="15"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
             android:id="@+id/labelNombreEquipo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="40"
             android:text="Equipo"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
             android:id="@+id/labelPartidosJugados"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="15"
             android:text="PJ"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
        <TextView
             android:id="@+id/labelGolDiferencia"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="15"
             android:text="GD"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
             android:id="@+id/labelPuntos"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="PUNTOS"
+            android:layout_weight="15"
+            android:text="PTS"
             android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>
 

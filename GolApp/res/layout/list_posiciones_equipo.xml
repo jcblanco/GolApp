@@ -1,42 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal" >
+    android:layout_alignParentTop="true"
+    android:layout_margin="0dp"
+    android:padding="5dp"
+    android:weightSum="100" >
 
     <ImageView
         android:id="@+id/escudo"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="15"
         android:src="@drawable/ic_launcher" />
 
+    <TextView
+        android:id="@+id/equipo"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="40"
+        android:text="Equipo"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-            android:id="@+id/equipo"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:text="Equipo"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:id="@+id/partidosJugados"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="15"
+        android:text="PJ"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
-        <TextView
-            android:id="@+id/partidosJugados"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:text="PJ"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+    <TextView
+        android:id="@+id/golDiferencia"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="15"
+        android:text="GD"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
-       <TextView
-            android:id="@+id/golDiferencia"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:text="GD"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-
-        <TextView
-            android:id="@+id/puntos"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:text="PUNTOS"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+    <TextView
+        android:id="@+id/puntos"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="15"
+        android:text="PUNTOS"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </LinearLayout>
