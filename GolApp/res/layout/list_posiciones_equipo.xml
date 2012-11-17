@@ -25,28 +25,7 @@
             android:text="PJ"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
-        <TextView
-            android:id="@+id/partidosGanados"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:text="PG"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-
-        <TextView
-            android:id="@+id/partidosEmpatados"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:text="PE"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-
-        <TextView
-            android:id="@+id/partidosPerdidos"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:text="PP"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-
-        <TextView
+       <TextView
             android:id="@+id/golDiferencia"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"

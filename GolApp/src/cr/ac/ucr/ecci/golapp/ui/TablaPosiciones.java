@@ -7,8 +7,8 @@ import cr.ac.ucr.ecci.golapp.R;
 import cr.ac.ucr.ecci.golapp.R.layout;
 import cr.ac.ucr.ecci.golapp.R.menu;
 import cr.ac.ucr.ecci.golapp.bo.PosicionEquipo;
-import cr.ac.ucr.ecci.service.GolService;
-import cr.ac.ucr.ecci.service.GolServiceFactory;
+import cr.ac.ucr.ecci.golapp.service.GolService;
+import cr.ac.ucr.ecci.golapp.service.GolServiceFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -69,7 +69,7 @@ public class TablaPosiciones extends Activity {
 				GolService service= GolServiceFactory.getService(1);
 				List<PosicionEquipo> posiciones = null;
 				try {
-					posiciones=	service.getTablaPosiciones();
+					posiciones=	service.getPosiciones();
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -95,13 +95,11 @@ public class TablaPosiciones extends Activity {
     @Override
 	protected void onStart() {
 		super.onStart();
-//		Debug.startMethodTracing("despues_viewholder_debug");
 	}
 
 	@Override
 	protected void onStop() {
 		super.onStop();
-//		Debug.stopMethodTracing();
 	}
 
 	@Override
@@ -160,12 +158,6 @@ public class TablaPosiciones extends Activity {
 						.findViewById(R.id.nombreEquipo);
 				holder.partidosJugados = (TextView) convertView
 						.findViewById(R.id.partidosJugados);
-				holder.partidosGanados = (TextView) convertView
-						.findViewById(R.id.partidosGanados);
-				holder.partidosPerdidos = (TextView) convertView
-						.findViewById(R.id.partidosPerdidos);
-				holder.partidosEmpatados = (TextView) convertView
-						.findViewById(R.id.partidosEmpatados);
 				holder.golDiferencia = (TextView) convertView
 						.findViewById(R.id.golDiferencia);
 				holder.puntos = (TextView) convertView
@@ -177,11 +169,8 @@ public class TablaPosiciones extends Activity {
 
 			holder.nombreEquipo.setText(equipo.getNombreEquipo());
 			holder.partidosJugados.setText(equipo.getPartidosJugados());
-			holder.partidosGanados.setText(equipo.getPartidosGanados());
-			holder.partidosPerdidos.setText(equipo.getPartidosPerdidos());
-			holder.partidosEmpatados.setText(equipo.getPartidosEmpatados());
-			holder.golDiferencia.setText(equipo.getGolesAnotados()-equipo.getGolesrecibidos());
-			holder.puntos.setText(equipo.getPuntos());
+			holder.golDiferencia.setText(equipo.getGolDiferencia());
+			holder.puntos.setText(equipo.getPuntosObtenidos());
 
 			return convertView;
 		}
@@ -190,9 +179,6 @@ public class TablaPosiciones extends Activity {
 	private static class PosicionViewHolder {
 		public TextView nombreEquipo;
 		public TextView partidosJugados;
-		public TextView partidosGanados;
-		public TextView partidosPerdidos;
-		public TextView partidosEmpatados;
 		public TextView golDiferencia;
 		public TextView puntos;
 	}
