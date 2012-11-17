@@ -12,16 +12,12 @@ import cr.ac.ucr.ecci.golapp.service.GolServiceFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.BaseAdapter;
-import android.widget.HeaderViewListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -82,8 +78,7 @@ public class TablaPosiciones extends Activity {
 			protected void onPostExecute(List<PosicionEquipo> result) {
 
 				if (result != null) {
-					PosicionesAdapter adapter = (PosicionesAdapter) ((HeaderViewListAdapter) mTablaPosiciones
-							.getAdapter()).getWrappedAdapter();
+					PosicionesAdapter adapter = (PosicionesAdapter) mTablaPosiciones.getAdapter();
 
 					adapter.addList(result);
 				}
@@ -104,13 +99,13 @@ public class TablaPosiciones extends Activity {
 
 	@Override
 	public Object onRetainNonConfigurationInstance() {
-		return ((PosicionesAdapter)((HeaderViewListAdapter) mTablaPosiciones.getAdapter()).getWrappedAdapter()).getPosiciones();
+		return ((PosicionesAdapter)mTablaPosiciones.getAdapter()).getPosiciones();
 	}
 
     
     private static class PosicionesAdapter extends BaseAdapter {
 
-		List<PosicionEquipo> posiciones;
+		List<PosicionEquipo> posiciones= new ArrayList<PosicionEquipo>();
 		LayoutInflater inflater;
 
 		public PosicionesAdapter(Context context, List<PosicionEquipo> posiciones) {
@@ -155,7 +150,7 @@ public class TablaPosiciones extends Activity {
 				holder = new PosicionViewHolder();
 				convertView.setTag(holder);
 				holder.nombreEquipo = (TextView) convertView
-						.findViewById(R.id.nombreEquipo);
+						.findViewById(R.id.equipo);
 				holder.partidosJugados = (TextView) convertView
 						.findViewById(R.id.partidosJugados);
 				holder.golDiferencia = (TextView) convertView
@@ -168,9 +163,9 @@ public class TablaPosiciones extends Activity {
 			}
 
 			holder.nombreEquipo.setText(equipo.getNombreEquipo());
-			holder.partidosJugados.setText(equipo.getPartidosJugados());
-			holder.golDiferencia.setText(equipo.getGolDiferencia());
-			holder.puntos.setText(equipo.getPuntosObtenidos());
+			holder.partidosJugados.setText(Integer.toString(equipo.getPartidosJugados()));
+			holder.golDiferencia.setText(Integer.toString(equipo.getGolDiferencia()));
+			holder.puntos.setText(Integer.toString(equipo.getPuntosObtenidos()));
 
 			return convertView;
 		}

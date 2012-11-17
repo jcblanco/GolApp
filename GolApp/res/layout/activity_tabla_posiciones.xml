@@ -22,28 +22,28 @@
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
-            android:id="@+id/nombreEquipo"
+            android:id="@+id/labelNombreEquipo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Equipo"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
-            android:id="@+id/partidosJugados"
+            android:id="@+id/labelPartidosJugados"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="PJ"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
        <TextView
-            android:id="@+id/golDiferencia"
+            android:id="@+id/labelGolDiferencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="GD"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
-            android:id="@+id/puntos"
+            android:id="@+id/labelPuntos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="PUNTOS"
