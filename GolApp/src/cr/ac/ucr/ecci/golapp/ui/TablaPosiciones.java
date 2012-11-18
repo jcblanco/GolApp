@@ -62,7 +62,7 @@ public class TablaPosiciones extends Activity {
 
 			@Override
 			protected List<PosicionEquipo> doInBackground(Void... params) {
-				GolService service= GolServiceFactory.getService(2);
+				GolService service= GolServiceFactory.getService(1);
 				List<PosicionEquipo> posiciones = null;
 				try {
 					posiciones=	service.getPosiciones();
@@ -133,11 +133,6 @@ public class TablaPosiciones extends Activity {
 
 		public long getItemId(int position) {
 			return position;
-		}
-
-		public void clearResults() {
-			posiciones.clear();
-			notifyDataSetChanged();
 		}
 
 		public View getView(int position, View convertView, ViewGroup parent) {

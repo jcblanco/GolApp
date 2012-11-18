@@ -24,6 +24,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import cr.ac.ucr.ecci.golapp.bo.Partido;
 import cr.ac.ucr.ecci.golapp.bo.PosicionEquipo;
 
 public class GolWebService extends GolService {
@@ -37,7 +38,7 @@ public class GolWebService extends GolService {
 	private SoapObject request = null;
 	private SoapSerializationEnvelope envelope = null;
 	//private SoapPrimitive resultsRequestSOAP = null;
-	private Object resultsRequestSOAP = null;
+	private SoapObject  resultsRequestSOAP = null;
 
 	// Declaracion de variables para serealziar y deserealizar
 	// objetos y cadenas JSON
@@ -72,8 +73,8 @@ public class GolWebService extends GolService {
 
 			//Se crea un objeto SoapPrimitive y se obtiene la respuesta
 			//de la peticion
-			resultsRequestSOAP = envelope.getResponse();
-
+			resultsRequestSOAP = (SoapObject)envelope.getResponse();
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -111,6 +112,18 @@ public class GolWebService extends GolService {
 		arrListPosiciones = gson.fromJson(strJson, lstT);
 
 		return arrListPosiciones;
+	}
+
+	@Override
+	public List<Partido> getProxJornada() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Partido> getJornadaAnterior() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

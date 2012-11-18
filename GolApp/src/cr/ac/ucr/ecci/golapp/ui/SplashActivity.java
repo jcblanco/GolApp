@@ -32,7 +32,7 @@ public class SplashActivity extends Activity {
 		mHandler.postDelayed(new Runnable() {
 
 			public void run() {
-				startActivity( new Intent(getApplicationContext(), TablaPosiciones.class));
+				startActivity( new Intent(getApplicationContext(), MainActivity.class));
 				finish();
 			}
 		}, 3000);

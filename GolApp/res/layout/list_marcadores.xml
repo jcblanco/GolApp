@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_margin="0dp"
+    android:padding="5dp"
+    android:weightSum="100" >
+
+    <ImageView
+        android:id="@+id/escudo"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="13"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/equipo1"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="30"
+        android:text="Equipo1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/golesEquipo1"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="5"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/separador"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="4"
+        android:text="-"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/golesEquipo2"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="5"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/equipo2"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="30"
+        android:text="Equipo2"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/escudo2"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="13"
+        android:src="@drawable/ic_launcher" />
+
+</LinearLayout>

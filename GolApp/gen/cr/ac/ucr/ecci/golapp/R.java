@@ -15,32 +15,58 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int equipo=0x7f070007;
-        public static final int equipos_list=0x7f070006;
-        public static final int escudo=0x7f070001;
-        public static final int golDiferencia=0x7f070009;
-        public static final int labelGolDiferencia=0x7f070004;
-        public static final int labelNombreEquipo=0x7f070002;
-        public static final int labelPartidosJugados=0x7f070003;
-        public static final int labelPuntos=0x7f070005;
-        public static final int menu_settings=0x7f07000b;
-        public static final int partidosJugados=0x7f070008;
-        public static final int puntos=0x7f07000a;
-        public static final int tabla_titles=0x7f070000;
+        public static final int button1=0x7f070001;
+        public static final int button2=0x7f070002;
+        public static final int button3=0x7f070003;
+        public static final int button4=0x7f070004;
+        public static final int equipo=0x7f070013;
+        public static final int equipo1=0x7f07000d;
+        public static final int equipo2=0x7f070011;
+        public static final int equipos_list=0x7f07000c;
+        public static final int escudo=0x7f070007;
+        public static final int escudo2=0x7f070012;
+        public static final int golDiferencia=0x7f070015;
+        public static final int golesEquipo1=0x7f07000e;
+        public static final int golesEquipo2=0x7f070010;
+        public static final int labelGolDiferencia=0x7f07000a;
+        public static final int labelNombreEquipo=0x7f070008;
+        public static final int labelPartidosJugados=0x7f070009;
+        public static final int labelPuntos=0x7f07000b;
+        public static final int marcadores_list=0x7f070000;
+        public static final int menu_settings=0x7f070017;
+        public static final int partidosJugados=0x7f070014;
+        public static final int partidos_list=0x7f070005;
+        public static final int puntos=0x7f070016;
+        public static final int separador=0x7f07000f;
+        public static final int tabla_titles=0x7f070006;
     }
     public static final class layout {
-        public static final int activity_splash=0x7f030000;
-        public static final int activity_tabla_posiciones=0x7f030001;
-        public static final int list_posiciones_equipo=0x7f030002;
+        public static final int activity_goleadores=0x7f030000;
+        public static final int activity_jornada_anterior=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int activity_prox_jornada=0x7f030003;
+        public static final int activity_splash=0x7f030004;
+        public static final int activity_tabla_posiciones=0x7f030005;
+        public static final int list_marcadores=0x7f030006;
+        public static final int list_partidos=0x7f030007;
+        public static final int list_posiciones_equipo=0x7f030008;
     }
     public static final class menu {
-        public static final int activity_splash=0x7f060000;
-        public static final int activity_tabla_posiciones=0x7f060001;
+        public static final int activity_goleadores=0x7f060000;
+        public static final int activity_jornada_anterior=0x7f060001;
+        public static final int activity_main=0x7f060002;
+        public static final int activity_prox_jornada=0x7f060003;
+        public static final int activity_splash=0x7f060004;
+        public static final int activity_tabla_posiciones=0x7f060005;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
         public static final int hello_world=0x7f040001;
         public static final int menu_settings=0x7f040002;
+        public static final int title_activity_goleadores=0x7f040006;
+        public static final int title_activity_jornada_anterior=0x7f040008;
+        public static final int title_activity_main=0x7f040007;
+        public static final int title_activity_prox_jornada=0x7f040005;
         public static final int title_activity_splash=0x7f040003;
         public static final int title_activity_tabla_posiciones=0x7f040004;
     }
