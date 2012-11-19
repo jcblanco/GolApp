@@ -9,5 +9,6 @@
     <string name="title_activity_goleadores">GoleadoresActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_jornada_anterior">JornadaAnteriorActivity</string>
+    <string name="title_activity_estadisticas">EstadisticasActivity</string>
 
 </resources>

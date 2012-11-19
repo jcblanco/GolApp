@@ -12,6 +12,7 @@ import cr.ac.ucr.ecci.golapp.service.GolServiceFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -83,6 +84,12 @@ public class TablaPosiciones extends Activity {
 					adapter.addList(result);
 				}
 			}
+			
+			@Override
+			protected void onPreExecute() {
+				super.onPreExecute();
+				clearData();
+			}
 
 		}.execute();
 	}
@@ -102,6 +109,10 @@ public class TablaPosiciones extends Activity {
 		return ((PosicionesAdapter)mTablaPosiciones.getAdapter()).getPosiciones();
 	}
 
+	public void clearData() {
+		PosicionesAdapter adapter = (PosicionesAdapter) mTablaPosiciones.getAdapter();
+		adapter.clear();
+	}
     
     private static class PosicionesAdapter extends BaseAdapter {
 
@@ -163,6 +174,11 @@ public class TablaPosiciones extends Activity {
 			holder.puntos.setText(Integer.toString(equipo.getPuntosObtenidos()));
 
 			return convertView;
+		}
+		
+		public void clear() {
+			posiciones.clear();
+			notifyDataSetChanged();
 		}
 	}
 

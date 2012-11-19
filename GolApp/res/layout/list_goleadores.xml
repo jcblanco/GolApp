@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_margin="0dp"
+    android:padding="5dp"
+    android:weightSum="100" >
+
+    <TextView
+        android:id="@+id/jugador"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="80"
+        android:text="Jugador"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:id="@+id/goles"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="20"
+        android:text="10"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</LinearLayout>

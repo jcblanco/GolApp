@@ -13,25 +13,30 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
+import android.widget.HeaderViewListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class JornadaAnteriorActivity extends Activity {
 
 	ListView mJornadaAnterior;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_jornada_anterior);
-		
+
 		mJornadaAnterior = (ListView) findViewById(R.id.marcadores_list);
-		
+
 		Object obj = getLastNonConfigurationInstance();
 		List<Partido> partidos = null;
 		if (obj != null) {
@@ -41,6 +46,28 @@ public class JornadaAnteriorActivity extends Activity {
 		}
 
 		mJornadaAnterior.setAdapter(new MarcadoresAdapter(this, partidos));
+
+		mJornadaAnterior.setTextFilterEnabled(true);
+		mJornadaAnterior.setOnItemClickListener(new OnItemClickListener() {
+
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				
+				MarcadoresAdapter adapter = (MarcadoresAdapter) mJornadaAnterior
+						.getAdapter();
+				
+				Partido p= (Partido)adapter.getItem(position);
+				
+				Intent intent = new Intent(JornadaAnteriorActivity.this, EstadisticasActivity.class);
+				//Bundle b = new Bundle();
+				//b.putString("partido", p.getEquipo1()); //Partido id
+				intent.putExtra("partido",p); //Put your id to your next Intent
+				startActivity(intent);
+				/*Toast.makeText(getApplicationContext(),
+						(Integer.toString(position)), Toast.LENGTH_SHORT).show();*/
+
+			}
+		});
 	}
 
 	@Override
@@ -85,6 +112,12 @@ public class JornadaAnteriorActivity extends Activity {
 				}
 			}
 
+			@Override
+			protected void onPreExecute() {
+				super.onPreExecute();
+				clearData();
+			}
+
 		}.execute();
 	}
 
@@ -100,7 +133,14 @@ public class JornadaAnteriorActivity extends Activity {
 
 	@Override
 	public Object onRetainNonConfigurationInstance() {
-		return ((MarcadoresAdapter) mJornadaAnterior.getAdapter()).getPartidos();
+		return ((MarcadoresAdapter) mJornadaAnterior.getAdapter())
+				.getPartidos();
+	}
+
+	public void clearData() {
+		MarcadoresAdapter adapter = (MarcadoresAdapter) mJornadaAnterior
+				.getAdapter();
+		adapter.clear();
 	}
 
 	private static class MarcadoresAdapter extends BaseAdapter {
@@ -140,8 +180,8 @@ public class JornadaAnteriorActivity extends Activity {
 			MarcadorViewHolder holder = null;
 
 			if (convertView == null) {
-				convertView = inflater.inflate(R.layout.list_marcadores, parent,
-						false);
+				convertView = inflater.inflate(R.layout.list_marcadores,
+						parent, false);
 				holder = new MarcadorViewHolder();
 				convertView.setTag(holder);
 				holder.nombreEquipo1 = (TextView) convertView
@@ -162,6 +202,11 @@ public class JornadaAnteriorActivity extends Activity {
 			holder.goles2.setText(Integer.toString(partido.getGoles2()));
 
 			return convertView;
+		}
+
+		public void clear() {
+			partidos.clear();
+			notifyDataSetChanged();
 		}
 	}
 

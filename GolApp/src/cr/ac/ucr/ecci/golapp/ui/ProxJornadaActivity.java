@@ -10,6 +10,7 @@ import cr.ac.ucr.ecci.golapp.bo.Partido;
 import cr.ac.ucr.ecci.golapp.bo.PosicionEquipo;
 import cr.ac.ucr.ecci.golapp.service.GolService;
 import cr.ac.ucr.ecci.golapp.service.GolServiceFactory;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -85,6 +86,12 @@ public class ProxJornadaActivity extends Activity {
 					adapter.addList(result);
 				}
 			}
+			
+			@Override
+			protected void onPreExecute() {
+				super.onPreExecute();
+				clearData();
+			}
 
 		}.execute();
 	}
@@ -102,6 +109,11 @@ public class ProxJornadaActivity extends Activity {
 	@Override
 	public Object onRetainNonConfigurationInstance() {
 		return ((PartidosAdapter) mProxPartidos.getAdapter()).getPartidos();
+	}
+	
+	public void clearData() {
+		PartidosAdapter adapter = (PartidosAdapter) mProxPartidos.getAdapter();
+		adapter.clear();
 	}
 
 	private static class PartidosAdapter extends BaseAdapter {
@@ -158,6 +170,11 @@ public class ProxJornadaActivity extends Activity {
 			holder.nombreEquipo2.setText(partido.getEquipo2());
 
 			return convertView;
+		}
+		
+		public void clear() {
+			partidos.clear();
+			notifyDataSetChanged();
 		}
 	}
 

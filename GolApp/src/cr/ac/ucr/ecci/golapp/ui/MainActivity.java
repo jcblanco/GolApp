@@ -40,4 +40,10 @@ public class MainActivity extends Activity {
 		startActivity(new Intent(MainActivity.this, JornadaAnteriorActivity.class));
 
 	}
+	
+	public void showGoleadores(View view) {
+
+		startActivity(new Intent(MainActivity.this, GoleadoresActivity.class));
+
+	}
 }

@@ -24,6 +24,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import cr.ac.ucr.ecci.golapp.bo.Goleador;
 import cr.ac.ucr.ecci.golapp.bo.Partido;
 import cr.ac.ucr.ecci.golapp.bo.PosicionEquipo;
 
@@ -122,6 +123,12 @@ public class GolWebService extends GolService {
 
 	@Override
 	public List<Partido> getJornadaAnterior() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Goleador> getGoleadores() {
 		// TODO Auto-generated method stub
 		return null;
 	}
