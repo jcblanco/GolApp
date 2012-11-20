@@ -4,11 +4,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_splash">SplashActivity</string>
-    <string name="title_activity_tabla_posiciones">TablaPosiciones</string>
-    <string name="title_activity_prox_jornada">ProxJornadaActivity</string>
-    <string name="title_activity_goleadores">GoleadoresActivity</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_jornada_anterior">JornadaAnteriorActivity</string>
-    <string name="title_activity_estadisticas">EstadisticasActivity</string>
+    <string name="title_activity_tabla_posiciones">Tabla de Posiciones</string>
+    <string name="title_activity_prox_jornada">Proxima Jornada</string>
+    <string name="title_activity_goleadores">Goleadores</string>
+    <string name="title_activity_main">Menu</string>
+    <string name="title_activity_jornada_anterior">Jornada Anterior</string>
+    <string name="title_activity_estadisticas">Estadisticas</string>
 
 </resources>

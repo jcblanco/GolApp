@@ -3,6 +3,9 @@ package cr.ac.ucr.ecci.golapp.ui;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
+
 import cr.ac.ucr.ecci.golapp.R;
 import cr.ac.ucr.ecci.golapp.R.layout;
 import cr.ac.ucr.ecci.golapp.R.menu;
@@ -22,7 +25,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class TablaPosiciones extends Activity {
+public class TablaPosiciones extends ActionBarActivity {
 
 	ListView mTablaPosiciones;
 	
@@ -45,18 +48,20 @@ public class TablaPosiciones extends Activity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu) {
+        menu.add(Menu.NONE, 7, Menu.NONE, "Goleadores")
+        .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        return super.onCreateOptionsMenu(menu);
+    }
+    
+    @Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
 		cargarTabla();
 	}
 
-	@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_tabla_posiciones, menu);
-        return true;
-    }
-    
+   
     public void cargarTabla(){
 
 		AsyncTask<Void, Void, List<PosicionEquipo>> task = new AsyncTask<Void, Void, List<PosicionEquipo>>() {

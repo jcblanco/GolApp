@@ -3,6 +3,8 @@ package cr.ac.ucr.ecci.golapp.ui;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.actionbarsherlock.app.SherlockActivity;
+
 import cr.ac.ucr.ecci.golapp.R;
 import cr.ac.ucr.ecci.golapp.R.layout;
 import cr.ac.ucr.ecci.golapp.R.menu;
@@ -26,7 +28,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class JornadaAnteriorActivity extends Activity {
+public class JornadaAnteriorActivity extends ActionBarActivity {
 
 	ListView mJornadaAnterior;
 
@@ -70,11 +72,6 @@ public class JornadaAnteriorActivity extends Activity {
 		});
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_jornada_anterior, menu);
-		return true;
-	}
 
 	@Override
 	protected void onResume() {

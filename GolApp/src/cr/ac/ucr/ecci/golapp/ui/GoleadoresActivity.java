@@ -3,6 +3,8 @@ package cr.ac.ucr.ecci.golapp.ui;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.actionbarsherlock.app.SherlockActivity;
+
 import cr.ac.ucr.ecci.golapp.R;
 import cr.ac.ucr.ecci.golapp.R.layout;
 import cr.ac.ucr.ecci.golapp.R.menu;
@@ -22,7 +24,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class GoleadoresActivity extends Activity {
+public class GoleadoresActivity extends ActionBarActivity {
 	
 	ListView mGoleadores;
 
@@ -44,13 +46,7 @@ public class GoleadoresActivity extends Activity {
 		mGoleadores.setAdapter(new GoleadoresAdapter(this, goleadores));
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_goleadores, menu);
-        return true;
-    }
-    
-
+  
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
