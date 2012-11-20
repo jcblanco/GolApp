@@ -2,4 +2,11 @@
 
     <style name="AppTheme" parent="android:Theme.Light" />
 
+    <style name="Button">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/bg_button_selector</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>

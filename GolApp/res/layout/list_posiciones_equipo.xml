@@ -20,6 +20,7 @@
         android:layout_height="fill_parent"
         android:layout_weight="40"
         android:text="Equipo"
+        android:textColor="@android:color/white"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
@@ -28,6 +29,7 @@
         android:layout_height="fill_parent"
         android:layout_weight="15"
         android:text="PJ"
+        android:textColor="@android:color/white"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
@@ -36,6 +38,7 @@
         android:layout_height="fill_parent"
         android:layout_weight="15"
         android:text="GD"
+        android:textColor="@android:color/white"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
@@ -44,6 +47,7 @@
         android:layout_height="fill_parent"
         android:layout_weight="15"
         android:text="PUNTOS"
+        android:textColor="@android:color/white"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </LinearLayout>
