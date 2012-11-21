@@ -38,6 +38,7 @@ public class JornadaAnteriorActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_jornada_anterior);
 
 		mJornadaAnterior = (ListView) findViewById(R.id.marcadores_list);
+		mJornadaAnterior.setEmptyView(findViewById(R.id.empty_list_view));
 
 		Object obj = getLastNonConfigurationInstance();
 		List<Partido> partidos = null;

@@ -35,6 +35,7 @@ public class ProxJornadaActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_prox_jornada);
 
 		mProxPartidos = (ListView) findViewById(R.id.partidos_list);
+		mProxPartidos.setEmptyView(findViewById(R.id.empty_list_view));
 
 		Object obj = getLastNonConfigurationInstance();
 		List<Partido> partidos = null;

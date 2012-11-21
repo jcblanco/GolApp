@@ -15,10 +15,10 @@ public class InMemoryGolService extends GolService {
 
 		List <PosicionEquipo> posiciones = new ArrayList<PosicionEquipo>();
 		
-		posiciones.add(new PosicionEquipo("Liga",9,8,30));
-		posiciones.add(new PosicionEquipo("Saprissa",9,12,27));
-		posiciones.add(new PosicionEquipo("Heredia",9,2,22));
-		posiciones.add(new PosicionEquipo("Limon",9,1,16));
+		posiciones.add(new PosicionEquipo("Liga",9,8,30/*,"http://www.yashinquesada.com/images/small-liga.jpg"*/));
+		posiciones.add(new PosicionEquipo("Saprissa",9,12,27/*,"http://www.yashinquesada.com/images/small-saprissa.jpg"*/));
+		posiciones.add(new PosicionEquipo("Heredia",9,2,22/*,"http://www.yashinquesada.com/images/small-heredia.jpg"*/));
+		posiciones.add(new PosicionEquipo("Limon",9,1,16/*,"http://www.yashinquesada.com/images/small-limon.jpg"*/));
 		
 		return posiciones;
 	}

@@ -35,6 +35,7 @@ public class TablaPosiciones extends ActionBarActivity {
         setContentView(R.layout.activity_tabla_posiciones);
         
         mTablaPosiciones  = (ListView) findViewById(R.id.equipos_list);
+        mTablaPosiciones.setEmptyView(findViewById(R.id.empty_list_view));
         
         Object obj = getLastNonConfigurationInstance();
 		List<PosicionEquipo> posiciones = null;
@@ -65,10 +66,11 @@ public class TablaPosiciones extends ActionBarActivity {
     public void cargarTabla(){
 
 		AsyncTask<Void, Void, List<PosicionEquipo>> task = new AsyncTask<Void, Void, List<PosicionEquipo>>() {
-
+			ProgressDialog dialog;
+			
 			@Override
 			protected List<PosicionEquipo> doInBackground(Void... params) {
-				GolService service= GolServiceFactory.getService(1);
+				GolService service= GolServiceFactory.getService(2);
 				List<PosicionEquipo> posiciones = null;
 				try {
 					posiciones=	service.getPosiciones();
@@ -82,7 +84,8 @@ public class TablaPosiciones extends ActionBarActivity {
 
 			@Override
 			protected void onPostExecute(List<PosicionEquipo> result) {
-
+				dialog.dismiss();
+				
 				if (result != null) {
 					PosicionesAdapter adapter = (PosicionesAdapter) mTablaPosiciones.getAdapter();
 
@@ -93,6 +96,11 @@ public class TablaPosiciones extends ActionBarActivity {
 			@Override
 			protected void onPreExecute() {
 				super.onPreExecute();
+				
+				dialog = new ProgressDialog(TablaPosiciones.this);
+				dialog.setMessage("Cargando\u2026");
+				dialog.show();
+				
 				clearData();
 			}
 
@@ -160,6 +168,8 @@ public class TablaPosiciones extends ActionBarActivity {
 						false);
 				holder = new PosicionViewHolder();
 				convertView.setTag(holder);
+				holder.posicion = (TextView) convertView
+						.findViewById(R.id.posicion);
 				holder.nombreEquipo = (TextView) convertView
 						.findViewById(R.id.equipo);
 				holder.partidosJugados = (TextView) convertView
@@ -173,6 +183,7 @@ public class TablaPosiciones extends ActionBarActivity {
 				holder = (PosicionViewHolder) convertView.getTag();
 			}
 
+			holder.posicion.setText(Integer.toString(position+1));
 			holder.nombreEquipo.setText(equipo.getNombreEquipo());
 			holder.partidosJugados.setText(Integer.toString(equipo.getPartidosJugados()));
 			holder.golDiferencia.setText(Integer.toString(equipo.getGolDiferencia()));
@@ -188,6 +199,7 @@ public class TablaPosiciones extends ActionBarActivity {
 	}
 
 	private static class PosicionViewHolder {
+		public TextView posicion;
 		public TextView nombreEquipo;
 		public TextView partidosJugados;
 		public TextView golDiferencia;

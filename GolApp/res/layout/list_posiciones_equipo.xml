@@ -5,7 +5,17 @@
     android:layout_alignParentTop="true"
     android:layout_margin="0dp"
     android:padding="5dp"
-    android:weightSum="100" >
+    android:weightSum="110" >
+
+    <TextView
+        android:id="@+id/posicion"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:text="1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/Yellow" />
 
     <ImageView
         android:id="@+id/escudo"
@@ -20,8 +30,8 @@
         android:layout_height="fill_parent"
         android:layout_weight="40"
         android:text="Equipo"
-        android:textColor="@android:color/white"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/partidosJugados"
@@ -29,8 +39,8 @@
         android:layout_height="fill_parent"
         android:layout_weight="15"
         android:text="PJ"
-        android:textColor="@android:color/white"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/golDiferencia"
@@ -38,8 +48,8 @@
         android:layout_height="fill_parent"
         android:layout_weight="15"
         android:text="GD"
-        android:textColor="@android:color/white"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/puntos"
@@ -47,7 +57,7 @@
         android:layout_height="fill_parent"
         android:layout_weight="15"
         android:text="PUNTOS"
-        android:textColor="@android:color/white"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>

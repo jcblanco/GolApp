@@ -89,10 +89,20 @@ public class GolWebService extends GolService {
 		//de objetos del tipo
 		String  strJSON = resultsRequestSOAP.toString();
 
-		List<PosicionEquipo> posiciones = crearLista(strJSON);
+		List<PosicionEquipo> posiciones = crearLista(parseToJSON(strJSON));
 
 		return posiciones;
 	}
+	
+	private String parseToJSON(String strJSON) {
+        strJSON = strJSON.replace(";", ",").replace("PosicionEquipo=anyType", "").replace("=", ":").replace(" ", "").replace(",}", "}").replace("anyType", "");
+        strJSON = strJSON.replaceAll("([a-zA-Zαινσϊ]+)", "\"$1\"");
+        
+        strJSON = strJSON.substring(1, strJSON.length()-1);
+        strJSON = "[" + strJSON + "]";
+        
+        return strJSON;
+}
 	
     /**
      * Metodo que recibe una cadena JSON y la convierte en una lista

@@ -34,6 +34,7 @@ public class GoleadoresActivity extends ActionBarActivity {
         setContentView(R.layout.activity_goleadores);
         
         mGoleadores= (ListView) findViewById(R.id.goleadores_list);
+        mGoleadores.setEmptyView(findViewById(R.id.empty_list_view));
 		
 		Object obj = getLastNonConfigurationInstance();
 		List<Goleador> goleadores = null;
